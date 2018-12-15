@@ -27,6 +27,11 @@ InputProcessor:
 	jal remove_spaces_before
 	jal delete_after_spaces
 	jal Length_Counter
+	lw $ra, 4($sp) # This sends the return address in $ra
+	lw $t8, 0($sp) # This will load the return value from the stack
+	addi $sp, $sp, 8 
+	addi $sp, $sp, -4
+	sw $t8, 0($sp)  # This will save the return value onto the stack 
 # This will remove the spaces in the beginning of the string.
 initial_space_deletion:
 
