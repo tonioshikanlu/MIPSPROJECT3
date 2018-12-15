@@ -340,7 +340,7 @@ ShowSum:
         syscall
         jr $ra
 
-   syscall
+   
 exit:
 
    li $v0,10     
