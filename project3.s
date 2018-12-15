@@ -242,9 +242,9 @@ changeString:
 
    lb $s2, 0($a0)
 
-   beqz $s2, ShowSum		
+   beqz $s2, return		
 
-   beq $s2, $t3, ShowSum    	
+   beq $s2, $t3, return    	
 
    slti $t4, $s2, 58        #This check if the character is between (0-9)
    bne $t4, $zero, numberLine
