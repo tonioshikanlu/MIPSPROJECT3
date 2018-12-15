@@ -105,11 +105,12 @@ terminate_space_loop:
    j Length_Counter
    # This will check the Length of the user's Input.
 Length_Counter:
+        li $t5, 0             
+        add $a0, $t7, $zero
+	lb $t3, 0($a0)
+        addi $t3, $t3, -10    
+        beq $t3, $zero, Empty_string_error  
 
-   li $t5, -1
-
-   add $a0, $t7, $zero
-   
    Loop:
    lb $t3, 0($a0)
    or $t2, $t3, $t5
