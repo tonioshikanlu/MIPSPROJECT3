@@ -9,6 +9,12 @@ main:  # This is the beginning of my main program.
    la $a0, userInput # This reads the user's string input.
    li $a1, 1000	# This assigns a space of 1000 bytes for the user.
    syscall 
+   # Added code for Project 3
+	addi $sp, $sp, -8
+	sw $a0, 4($sp) # This will save the user input onto the stack
+	sw $ra, 0($sp) # This will store the return address on stack
+	jal InputProcessor
+	lw $t8, 0($sp) # This will load the return value from the stack 
 # This will remove the spaces in the beginning of the string.
 initial_space_deletion:
 
