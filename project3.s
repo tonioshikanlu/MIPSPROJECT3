@@ -38,6 +38,13 @@ InputProcessor:
 	space_deletion_before:
 	li $t8, 32                     
 	lw $a0, 8($sp)                  # load user address position from the stack
+	
+	space_deletion_loop:
+	lb $t7, 0($a0)                  # load first input char into t7
+	beq $t8, $t7, initial_char_deletion # This will remove the initial character if it is a space
+	move $t7, $a0                   # if not a space save new input begining address into t7
+	jr $ra
+
 initial_char_deletion:
 
    addi $a0, $a0, 1 #This increments the counter.
