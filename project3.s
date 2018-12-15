@@ -20,6 +20,7 @@ main:  # This is the beginning of my main program.
 	sw $t8, 4($sp) # This will save the number to display on stack
 	sw $ra, 0($sp) # This will save the return address onto stack
 	jal ShowSum
+	j exit
 # This will remove the spaces in the beginning of the string.
 initial_space_deletion:
 
