@@ -21,6 +21,12 @@ main:  # This is the beginning of my main program.
 	sw $ra, 0($sp) # This will save the return address onto stack
 	jal ShowSum
 	j exit
+InputProcessor:
+	addi $sp, $sp, -4
+	sw $ra, 0($sp) # This will save return address on stack
+	jal remove_spaces_before
+	jal delete_after_spaces
+	jal Length_Counter
 # This will remove the spaces in the beginning of the string.
 initial_space_deletion:
 
