@@ -15,6 +15,11 @@ main:  # This is the beginning of my main program.
 	sw $ra, 0($sp) # This will store the return address on stack
 	jal InputProcessor
 	lw $t8, 0($sp) # This will load the return value from the stack 
+	addi $sp, $sp, 4 # This line restores the stack pointer
+        addi $sp, $sp, -8 # This validates space on stack from function parameter and return address 
+	sw $t8, 4($sp) # This will save the number to display on stack
+	sw $ra, 0($sp) # This will save the return address onto stack
+	jal ShowSum
 # This will remove the spaces in the beginning of the string.
 initial_space_deletion:
 
