@@ -24,7 +24,7 @@ main:  # This is the beginning of my main program.
 InputProcessor:
 	addi $sp, $sp, -4
 	sw $ra, 0($sp) # This will save return address on stack
-	jal remove_spaces_before
+	jal space_deletion_before
 	jal delete_after_spaces
 	jal Length_Counter
 	lw $ra, 4($sp) # This sends the return address in $ra
@@ -49,7 +49,7 @@ initial_char_deletion:
 
    addi $a0, $a0, 1 #This increments the counter.
 
-   j initial_space_deletion #Jumps to conditional.
+   j space_deletion_loop #Jumps to conditional.
 delete_after_spaces:
 
    la $t3, userInput  # Loads the user input.
@@ -173,7 +173,7 @@ string_checkerLoop:
 
    li $t8, 10               #This will check if the character is the newline character.
 
-   beq $t0, $t8, baseConverter
+   beq $t0, $zero, baseConverter
    
    slti $t4, $t0, 48        #Check if the character is less than 0 
 
