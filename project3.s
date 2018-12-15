@@ -97,6 +97,8 @@ terminate_space_loop:
    add $t4, $t4, $t2 
 
    addi $t4, $t4, 1  
+   sb $zero, 0($t4)     
+   jr $ra
    
    # This section of code regained the address of the registers.
 
