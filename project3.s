@@ -34,7 +34,10 @@ InputProcessor:
 	sw $t8, 0($sp)  # This will save the return value onto the stack 
 	jr $ra 
 
-
+# This portion of code fixes the bug from my project 2
+	space_deletion_before:
+	li $t8, 32                     
+	lw $a0, 8($sp)                  # load user address position from the stack
 initial_char_deletion:
 
    addi $a0, $a0, 1 #This increments the counter.
