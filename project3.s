@@ -329,6 +329,11 @@ exp_zero: # Raises the base to power of zero
    mflo $s7
 
    add $t8, $t8, $s7
+return:
+	addi $sp, $sp, -4
+	sw $t8, 0($sp)     # This saves the returned integer on the stack
+	jr $ra 
+	
 ShowSum:
 
    li $v0, 1
