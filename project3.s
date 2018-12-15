@@ -32,6 +32,7 @@ InputProcessor:
 	addi $sp, $sp, 8 
 	addi $sp, $sp, -4
 	sw $t8, 0($sp)  # This will save the return value onto the stack 
+	jr $ra 
 # This will remove the spaces in the beginning of the string.
 initial_space_deletion:
 
