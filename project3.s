@@ -335,10 +335,10 @@ return:
 	jr $ra 
 	
 ShowSum:
-
-   li $v0, 1
-
-   move $a0, $t8
+        li $v0, 1
+        lw $a0, 4($sp) # This will load the total sum to be shownfrom the stack 
+        syscall
+        jr $ra
 
    syscall
 exit:
